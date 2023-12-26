@@ -12,7 +12,7 @@ Tracking-id:
 
 -Type
 Must be one of the following:
-'''
+```
 feat: A new feature
 fix: A bug fix
 docs: Documentation only changes
@@ -21,4 +21,4 @@ refactor: A code change that neither fixes a bug nor adds a feature
 perf: A code change that improves performance
 test: Adding missing or correcting existing tests
 chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
-'''
+```
