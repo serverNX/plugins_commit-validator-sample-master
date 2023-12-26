@@ -1,6 +1,7 @@
 # plugins_commit-validator-sample-master
 
-#this plugin can check commit based on commit template
+#this plugin force format commit template as below:
+
 
 ```<subject>
 <BLANK LINE>
@@ -10,8 +11,7 @@ Project:
 Tracking-id:
 ```
 
-*Type
-Must be one of the following:
+- Type Must be one of the following:
 ```
 feat: A new feature
 fix: A bug fix
@@ -22,3 +22,5 @@ perf: A code change that improves performance
 test: Adding missing or correcting existing tests
 chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
 ```
+- build steps
+mvn package
