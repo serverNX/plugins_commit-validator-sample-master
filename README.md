@@ -10,7 +10,7 @@ Project:
 Tracking-id:
 ```
 
--Type
+*Type
 Must be one of the following:
 ```
 feat: A new feature
