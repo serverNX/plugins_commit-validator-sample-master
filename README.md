@@ -1,6 +1,7 @@
 # plugins_commit-validator-sample-master
+this plugin based on https://gerrit.googlesource.com/plugins/commit-validator-sample
 
-#this plugin force format commit template as below:
+# this plugin force format commit template as below:
 
 
 ```
