@@ -23,4 +23,6 @@ test: Adding missing or correcting existing tests
 chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
 ```
 - build steps
+```
 mvn package
+```
