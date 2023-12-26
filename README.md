@@ -2,13 +2,13 @@
 
 #this plugin can check commit based on commit template
 
-'''<subject>
+```<subject>
 <BLANK LINE>
 Module:
 Type:
 Project:
 Tracking-id:
-'''
+```
 
 -Type
 Must be one of the following:
