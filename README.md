@@ -3,7 +3,8 @@
 #this plugin force format commit template as below:
 
 
-```<subject>
+```
+<subject>
 <BLANK LINE>
 Module:
 Type:
