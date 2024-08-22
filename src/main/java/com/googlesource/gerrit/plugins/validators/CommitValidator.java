@@ -41,30 +41,30 @@ public class CommitValidator implements CommitValidationListener {
     final String commitMessage = receiveEvent.commit.getFullMessage();
     final List<CommitValidationMessage> messages = new ArrayList<CommitValidationMessage>();
 
-    if(commit.getShortMessage().length() >70){
+    if(commit.getShortMessage().length() >100){
       log.warn("CommitValidator> Commit "
           + receiveEvent.commit.getId().getName() + " REJECTED");
       throw new CommitValidationException("Commit length validation failed");
     }
-    Matcher mModule = Pattern.compile("\\s?(Module|module)\\s?:\\s?").matcher(commitMessage);
-    Matcher mProject = Pattern.compile("\\s?(Project|project)\\s?:\\s?").matcher(commitMessage);
-    Matcher mType = Pattern.compile("\\s?(type|Type)\\s?:\\s?(style|feat|test|refactor|chore|fix|chore)").matcher(commitMessage);
-    Matcher mTracnkingId = Pattern.compile("\\s?(Tracking-id|tracking-id|Tracking-Id)\\s?:\\s?").matcher(commitMessage);
+    Matcher mModule = Pattern.compile("\\s?(Module|module)\\s?:\\s?\\w+\\n").matcher(commitMessage);
+    Matcher mProject = Pattern.compile("\\s?(Project|project)\\s?:\\s?\\w+\\n").matcher(commitMessage);
+    Matcher mType = Pattern.compile("\\s?(type|Type)\\s?:\\s?(style|feat|test|refactor|chore|fix|chore)\\n").matcher(commitMessage);
+    Matcher mTracnkingId = Pattern.compile("\\s?(Tracking-id|tracking-id|Tracking-Id)\\s?:\\s?(NA|na|Na|\\d+)\\n").matcher(commitMessage);
 
     if ( ! mModule.find()) {
       log.warn("CommitValidator> Commit "
           + receiveEvent.commit.getId().getName() + " REJECTED");
-      throw new CommitValidationException("Keyword 'module' commit messages not included");
+      throw new CommitValidationException("Keyword 'module' commit messages not included or module value needed");
     }
     if ( ! mProject.find()) {
       log.warn("CommitValidator> Commit "
           + receiveEvent.commit.getId().getName() + " REJECTED");
-      throw new CommitValidationException("Keyword 'project' commit messages not included");
+      throw new CommitValidationException("Keyword 'project' commit messages not included or project value needed");
     }
     if (! mTracnkingId.find()) {
       log.warn("CommitValidator> Commit "
           + receiveEvent.commit.getId().getName() + " REJECTED");
-      throw new CommitValidationException("Keyword 'tracking-id' commit messages not included");
+      throw new CommitValidationException("Keyword 'tracking-id' commit messages not included or value not format number");
     }
     if (! mType.find()) {
       log.warn("CommitValidator> Commit "
