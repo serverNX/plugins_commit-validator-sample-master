@@ -47,7 +47,7 @@ public class CommitValidator implements CommitValidationListener {
       throw new CommitValidationException("Commit length validation failed");
     }
     Matcher mModule = Pattern.compile("\\s?(Module|module)\\s?:\\s?\\w+\\n").matcher(commitMessage);
-    Matcher mProject = Pattern.compile("\\s?(Project|project)\\s?:\\s?\\w+\\n").matcher(commitMessage);
+    Matcher mProject = Pattern.compile("\\s?(Project|project)\\s?:\\s?\\w+.*\\n").matcher(commitMessage);
     Matcher mType = Pattern.compile("\\s?(type|Type)\\s?:\\s?(style|feat|test|refactor|chore|fix|chore)\\n").matcher(commitMessage);
     Matcher mTracnkingId = Pattern.compile("\\s?(Tracking-id|tracking-id|Tracking-Id)\\s?:\\s?(NA|na|Na|\\d+)\\n").matcher(commitMessage);
 
