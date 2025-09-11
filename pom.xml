@@ -20,7 +20,7 @@ limitations under the License.
   <modelVersion>4.0.0</modelVersion>
   <artifactId>commit-validator-sample</artifactId>
   <groupId>com.googlesource.gerrit.plugins.commit</groupId>
-  <version>2.0</version>
+  <version>2.1</version>
   <name>Gerrit Code Review - Sample commit validation plug-in</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -53,8 +53,8 @@ limitations under the License.
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
          <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
